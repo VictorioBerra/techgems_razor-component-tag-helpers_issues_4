@@ -1,0 +1,24 @@
+@using Sample_Project_TagHelpers.Views.TagHelpers
+@model MyAccessPageComponent
+
+@* Represents a terminal end to some journey, a simple message with a back/home button generally. *@
+<div>
+    <p>Heading should be below me...</p>
+
+    <myaccess-heading heading="Hello World!" />
+
+    <div>
+        @Model.ChildContent
+    </div>
+
+    <div>
+        @if (Model.IsSlotContentNullOrEmpty(MyAccessPageComponent.PageFooterSlot))
+        {
+            <a asp-page="/Index">Home</a>
+        }
+        else
+        {
+            @Model.RenderSlot(MyAccessPageComponent.PageFooterSlot)
+        }
+    </div>
+</div>

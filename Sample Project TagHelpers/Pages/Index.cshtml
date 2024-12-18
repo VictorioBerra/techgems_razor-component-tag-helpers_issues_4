@@ -1,0 +1,17 @@
+﻿@page
+@using Sample_Project_TagHelpers.Pages
+@using Sample_Project_TagHelpers.Views.TagHelpers
+@model IndexModel
+@{
+    ViewData["Title"] = "Home page";
+}
+
+<myaccess-page heading="Custom Heading">
+
+    <p>Child Content</p>
+
+    <slot name="@MyAccessPageComponent.PageFooterSlot">
+        <p>Slot Content</p>
+    </slot>
+
+</myaccess-page>
